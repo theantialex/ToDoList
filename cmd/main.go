@@ -22,7 +22,7 @@ func headerMiddleware(handler httprouter.Handle) httprouter.Handle {
 }
 
 func main() {
-	db, err := sql.Open("postgres", "postgres://todolist:12345@localhost:5432/todolist")
+	db, err := sql.Open("postgres", "postgres://todolist:12345@host.docker.internal:5432/todolist")
 	if err != nil {
 		log.Fatalln("failed to connect to database", err.Error())
 	}

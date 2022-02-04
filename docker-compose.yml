@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  tasks:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        - APP_PKG_NAME=todolist/m
+        - GOOS=linux
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
